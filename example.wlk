@@ -36,7 +36,7 @@ object fiesta {
   var globos = 0
   var anfitrion = manic
   
-  method estaPreparada() = self.tieneSuficientesGlobos() and anfitrion.tieneTodoListo()
+  method estaPreparada() = self.tieneSuficientesGlobos() and anfitrion.tieneTodoListo() || yvoty.tieneBateria()
   
   method tieneSuficientesGlobos() = globos >= 50
   
@@ -49,4 +49,14 @@ object fiesta {
   }
   
   method globos() = globos
+}
+
+object yvoty {
+  var celularDescargado = true
+
+  method cargarCelular() {
+    celularDescargado = true
+  }
+
+  method tieneBateria() = !celularDescargado
 }
